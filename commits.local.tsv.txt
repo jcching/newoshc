@@ -1,0 +1,111 @@
+0d3ba18	ceapas	Mon Apr 25 21:03:14 2016	updated splash page for smaller phones
+60b9654	ceapas	Sun Apr 24 11:39:47 2016	added in-order mode
+e694d55	ceapas	Thu Apr 21 21:20:43 2016	updated code to patch glitch
+1e7146e	ceapas	Thu Apr 21 18:48:02 2016	removed debug alert
+49a9503	ceapas	Thu Apr 21 18:46:10 2016	readied
+ccf2347	ceapas	Thu Apr 21 18:42:25 2016	fg
+cf496f0	ceapas	Thu Apr 21 18:40:08 2016	re added hs code
+b45be1e	ceapas	Thu Apr 21 18:27:00 2016	enabled new question select
+0c5650a	ceapas	Thu Apr 21 18:23:16 2016	fixed bugs
+2026df2	jcching	Thu Apr 21 08:48:42 2016	Unfixed mentor bug
+eac71c1	ceapas	Thu Apr 21 01:38:50 2016	added fast click
+cae4186	ceapas	Thu Apr 21 01:31:10 2016	fixed
+d4641ef	ceapas	Thu Apr 21 01:29:49 2016	asdf
+1d7c34c	ceapas	Thu Apr 21 01:26:51 2016	sdf
+aea4839	ceapas	Thu Apr 21 01:23:10 2016	a
+4664730	ceapas	Thu Apr 21 01:19:35 2016	updated touch events
+28ff6b4	ceapas	Thu Apr 21 01:16:03 2016	asd
+751397e	ceapas	Thu Apr 21 01:13:35 2016	jk
+e476e08	ceapas	Thu Apr 21 01:03:27 2016	dog
+92fd798	ceapas	Thu Apr 21 01:03:03 2016	asdas
+f03fa7c	ceapas	Thu Apr 21 00:55:09 2016	let
+40c028c	ceapas	Thu Apr 21 00:54:19 2016	asd
+40f99c9	ceapas	Thu Apr 21 00:48:07 2016	disable force install on testing
+afeac5b	ceapas	Thu Apr 21 00:42:52 2016	revert to logic
+dd7499e	ceapas	Thu Apr 21 00:38:56 2016	fix again
+5fd5272	ceapas	Thu Apr 21 00:36:46 2016	fix crash
+0ea564d	ceapas	Thu Apr 21 00:33:39 2016	temp disable online features
+58ce6fb	ceapas	Thu Apr 21 00:24:06 2016	added lookup function
+6563f69	ceapas	Thu Apr 21 00:15:59 2016	ha
+51e6f3c	ceapas	Thu Apr 21 00:04:05 2016	retry
+7e5375b	ceapas	Thu Apr 21 00:02:00 2016	added hidden hs code
+8765a9a	ceapas	Wed Apr 20 23:51:47 2016	loading test
+b3af682	ceapas	Wed Apr 20 22:42:21 2016	updated code so no duplicate questions will show
+f25fae7	ceapas	Tue Apr 19 15:58:44 2016	test updated database code
+bae3293	ceapas	Tue Apr 19 15:23:56 2016	added offline icons
+9a42dfb	ceapas	Tue Apr 19 15:14:51 2016	fixed double answer
+3d1c961	ceapas	Tue Apr 19 15:09:08 2016	try to fix true bug
+4f7e97f	ceapas	Tue Apr 19 15:06:13 2016	updated rounding
+d469638	ceapas	Tue Apr 19 15:01:29 2016	patched multi answerr glitch
+b7d421f	ceapas	Tue Apr 19 14:59:10 2016	re-fixed case bug
+43480fb	ceapas	Tue Apr 19 14:51:21 2016	fix lowercase bug
+8910f8e	ceapas	Tue Apr 19 13:57:06 2016	fixed date bug
+d711bfe	ceapas	Tue Apr 19 13:54:17 2016	added highscore stats page
+f93a68d	ceapas	Sat Apr 16 18:28:27 2016	pulled test branch to index
+e341a25	ceapas	Sat Apr 16 18:26:54 2016	implemented settings code
+1bc1253	ceapas	Sat Apr 16 13:57:23 2016	updated answer logic to prep for filter
+07987da	ceapas	Sat Apr 16 12:26:53 2016	fixed initial load bug
+c91607e	ceapas	Sat Apr 16 12:21:12 2016	added default settings
+94f6759	ceapas	Sat Apr 16 12:17:56 2016	implement setting save
+89b03f0	ceapas	Sat Apr 16 11:07:15 2016	test for inline options
+18952d9	ceapas	Sat Apr 16 00:52:03 2016	added logo to download page
+38b4cc8	jcching	Fri Apr 15 18:16:56 2016	Fixed bug producing wrong answer for searched
+874ca11	jcching	Thu Apr 14 17:08:35 2016	Re adjust size
+57c1f17	jcching	Thu Apr 14 17:07:28 2016	Increased font size
+3107f29	ceapas	Mon Apr 11 23:55:09 2016	added iOS icons
+597bbb5	ceapas	Mon Apr 11 23:47:34 2016	updated icon
+ec84fd2	ceapas	Mon Apr 11 23:46:56 2016	embed favicon code
+d457743	ceapas	Mon Apr 11 23:44:32 2016	updated favicon
+0e05570	ceapas	Mon Apr 11 23:37:42 2016	added stats
+bc9cf68	ceapas	Mon Apr 11 23:24:52 2016	merged index with splashiest
+62ddce0	ceapas	Mon Apr 11 23:22:33 2016	updated mobile splash code
+b9d8b58	ceapas	Mon Apr 11 23:10:39 2016	back on track
+7e9ee5a	ceapas	Mon Apr 11 23:09:26 2016	reverted
+274644a	ceapas	Mon Apr 11 22:56:14 2016	asdasd
+60041b6	ceapas	Mon Apr 11 22:28:02 2016	gif
+94ca9db	ceapas	Mon Apr 11 22:26:37 2016	gf
+138b1c0	ceapas	Mon Apr 11 22:23:45 2016	asd
+87aa401	ceapas	Mon Apr 11 22:22:56 2016	as
+f3905f1	ceapas	Mon Apr 11 22:18:37 2016	12
+f0b327f	ceapas	Mon Apr 11 22:13:21 2016	changed back
+9de7da2	ceapas	Mon Apr 11 22:12:17 2016	123
+9633136	ceapas	Mon Apr 11 22:11:07 2016	90
+36b37b4	ceapas	Mon Apr 11 22:09:46 2016	9
+b936066	ceapas	Mon Apr 11 22:05:04 2016	8
+fc911a4	ceapas	Mon Apr 11 22:03:15 2016	7
+8956468	ceapas	Mon Apr 11 22:01:44 2016	6
+0b1e9f0	ceapas	Mon Apr 11 21:59:44 2016	5
+42f59ab	ceapas	Mon Apr 11 21:59:02 2016	4
+ce62a9d	ceapas	Mon Apr 11 21:57:14 2016	debug3
+9ca5285	ceapas	Mon Apr 11 21:55:35 2016	log debug
+0af5441	ceapas	Mon Apr 11 21:52:28 2016	splash code update
+81c859a	ceapas	Mon Apr 11 21:49:47 2016	split test page to avoid customer hours lost
+db9fd30	ceapas	Mon Apr 11 21:47:30 2016	edit
+eebc492	ceapas	Mon Apr 11 21:46:59 2016	debugg2
+b929ad6	ceapas	Mon Apr 11 21:45:16 2016	debugging for install
+d5845be	ceapas	Mon Apr 11 21:42:24 2016	returned user control for iOS apps
+a3e3331	ceapas	Mon Apr 11 21:37:56 2016	again
+9587a23	ceapas	Mon Apr 11 21:37:13 2016	fixed overlap issue
+d9ba3d9	ceapas	Mon Apr 11 21:36:10 2016	added welcome text to install page
+f1f5d64	ceapas	Mon Apr 11 21:22:51 2016	test forceload
+df5bacf	ceapas	Mon Apr 11 21:14:50 2016	realigned everything on splash
+b4271fa	ceapas	Mon Apr 11 21:06:49 2016	try margin
+8002a41	ceapas	Mon Apr 11 21:05:15 2016	fixed arrow alignment on splash
+f1a7045	ceapas	Mon Apr 11 20:34:43 2016	updated splash page
+582ddb9	ceapas	Mon Apr 11 20:22:10 2016	Added dummy splash page for android
+985f099	ceapas	Sun Apr 10 16:53:21 2016	increased timer font size
+af0c616	ceapas	Sun Apr 10 16:47:01 2016	switch timer library for deployment
+8814776	ceapas	Sun Apr 10 16:35:02 2016	added timer function
+07522d7	ceapas	Sun Apr 10 15:58:02 2016	modification to footer behaviour
+b44e13b	ceapas	Sun Apr 10 15:55:08 2016	fixed footer overlap bug
+5d46145	ceapas	Sun Apr 10 15:50:46 2016	fixed search menu bug
+fbde583	ceapas	Sun Apr 10 15:34:52 2016	added number search feature
+5fcc4f9	ceapas	Sun Apr 10 14:14:07 2016	added credit text
+eee4669	ceapas	Sun Apr 10 13:47:29 2016	modified footer height for mobile
+b9c3847	ceapas	Sun Apr 10 12:43:08 2016	added footer text
+4213609	ceapas	Sun Apr 10 00:12:58 2016	added subtitles
+b4da968	ceapas	Sun Apr 10 00:05:00 2016	disabled scaling
+9c24631	ceapas	Sat Apr 9 23:53:04 2016	made title bar black
+80b8feb	ceapas	Sat Apr 9 23:51:53 2016	added title
+5bc9607	ceapas	Sat Apr 9 23:47:31 2016	host locally on gh doc pages
+22417d5	ceapas	Sat Apr 9 23:40:53 2016	init

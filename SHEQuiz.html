@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /> 
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+
+  <link rel="apple-touch-icon" href="ios/AppIcon.appiconset/Icon-60@2x.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="ios/AppIcon.appiconset/Icon-60@3x.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="ios/AppIcon.appiconset/Icon-76.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="ios/AppIcon.appiconset/Icon-76@2x.png" />
+  <link rel="apple-touch-icon" sizes="58x58" href="ios/AppIcon.appiconset/Icon-Small@2x.png" />
+
+    <title>SHEQuiz</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/sheq.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">SHEQuiz@CLP</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">
+              <span class="glyphicon glyphicon-random" aria-hidden="true"></span> Random</a>
+            </li>
+            <li id="searchButton"><a href="#"data-toggle="modal" data-target="#searchModal"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</a></li>
+
+            <li id="searchButton"><a href="#"data-toggle="modal" data-target="#settingsModal"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings</a></li>
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container" id="bodyContainer">
+<div class="jumbotron">
+        <h3 id="refLabel">QA</h1>
+        <p id="questionLabel">Loading question.</p>
+      </div>
+     	<div class="list-group">
+            <a href="#" class="list-group-item" id="ansA">
+            <!-- add active to above to make blue -->
+              <h4 class="list-group-item-heading">A:</h4>
+              <p class="list-group-item-text">loading</p>
+            </a>
+            <a href="#" class="list-group-item"id="ansB">
+              <h4 class="list-group-item-heading">B:</h4>
+              <p class="list-group-item-text" >loading</p>
+            </a>
+            <a href="#" class="list-group-item"id="ansC">
+              <h4 class="list-group-item-heading">C:</h4>
+              <p class="list-group-item-text" >loading</p> 
+            </a>
+         </div>
+         <div id="accessories">
+          <h4>
+          <span class="label label-danger" id="timer">00:00</span>
+          <span class="label label-warning" id="stats">0/0 @ 0%</span>
+          <span id="answerRecord"></span>
+          </h4>
+         </div>
+
+
+
+
+      </div>
+
+    </div><!-- /.container -->
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Idea By Antony Ho, Code by John Ching | Information Classification : PROPRIETARY </p><p class="text-muted">©2016 CLP Power Hong Kong Limited.中華電力有限公司 All Rights Reserved</p>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- check if mobile and prompt install -->
+    <script src="js/webappInstall.js"></script>
+
+    <!-- load up the timer library -->
+
+    <script src="js/timer.jquery.js"></script>
+
+
+
+
+    <!-- questionbank is loaded here -->
+    <script type="text/javascript" language="javascript" src="js/data.json"></script> 
+
+    <script src="js/logic.js"></script>
+  
+<!-- Modal for searching question number -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Load a question by number or by keyword</h4>
+      </div>
+      <div class="modal-body"><div class="input-group">
+
+  <span class="input-group-addon" id="basic-addon1">QA</span>
+      <input type="number" pattern="[0-9]*" inputmode="numeric" min="1" max="1538" class="form-control" placeholder="123" id="numberSearchBox">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button" id="numberSearchButton"><span class="glyphicon glyphicon-search" aria-hidden="true"></button>
+      </span>
+    </div><!-- /input-group -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal for settings -->
+<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Settings</h4>
+      </div>
+      <div class="modal-body">
+        <form id="settingsForm">
+          <label class="control-label">Category</label>
+          <select class="form-control">
+            <option>Ops (All)</option>
+            <option>Office Based</option>
+          </select>
+
+
+          <label class="control-label">Question Range</label>
+          <div class="row">
+            <div class="col-xs-2">
+          <select class="form-control">
+            <option>1</option>
+            <option>100</option>
+            <option>200</option>
+            <option>300</option>
+            <option>400</option>
+            <option>500</option>
+            <option>600</option>
+            <option>700</option>
+            <option>800</option>
+            <option>900</option>
+            <option>1000</option>
+            <option>1100</option>
+            <option>1200</option>
+            <option>1300</option>
+            <option>1400</option>
+            <option>1500</option>
+            <option>1600</option>
+          </select></div>
+          
+          <div class="col-xs-1">to</div>
+          <div class="col-xs-2">
+          <select class="form-control">
+            <option>1</option>
+            <option>100</option>
+            <option>200</option>
+            <option>300</option>
+            <option>400</option>
+            <option>500</option>
+            <option>600</option>
+            <option>700</option>
+            <option>800</option>
+            <option>900</option>
+            <option>1000</option>
+            <option>1100</option>
+            <option>1200</option>
+            <option>1300</option>
+            <option>1400</option>
+            <option>1500</option>
+            <option>1600</option>
+          </select></div>
+
+          </div>
+          <label class="control-label">Staff ID</label>
+
+      <input type="number" pattern="[0-9]*" inputmode="numeric" class="form-control" placeholder="15909" id="numberSearchBox">
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+
+        </form>
+      </div><!-- close modal body-->
+    </div>
+  </div>
+</div><!-- /close modal -->
+
+
+
+</body>
+</html>

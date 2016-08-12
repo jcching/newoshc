@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /> 
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+
+  <link rel="apple-touch-icon" href="ios/AppIcon.appiconset/Icon-60@2x.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="ios/AppIcon.appiconset/Icon-60@3x.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="ios/AppIcon.appiconset/Icon-76.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="ios/AppIcon.appiconset/Icon-76@2x.png" />
+  <link rel="apple-touch-icon" sizes="58x58" href="ios/AppIcon.appiconset/Icon-Small@2x.png" />
+
+    <title>SHEQuiz</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/sheq.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">SHEQuiz@CLP</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">
+              <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Questions</a>
+            </li>
+            <li id="searchButton"><a href="#"data-toggle="modal" data-target="#searchModal"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</a></li>
+
+            <li><a href="#"data-toggle="modal" data-target="#settingsModal"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings</a></li>
+
+            <li><a href="#"data-toggle="modal" data-target="#statsModal"><span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span> Stats</a></li>
+
+            <li><a href="#"data-toggle="modal" data-target="#logModal"><span class="glyphicon glyphicon-console" aria-hidden="true"></span> Version</a></li>
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container" id="bodyContainer">
+<div class="jumbotron">
+        <h3 id="refLabel">QA</h1>
+        <p id="questionLabel">Loading question.</p>
+      </div>
+     	<div class="list-group">
+            <a href="#" class="list-group-item" id="ansA">
+            <!-- add active to above to make blue -->
+              <h4 class="list-group-item-heading">A:</h4>
+              <p class="list-group-item-text">loading</p>
+            </a>
+            <a href="#" class="list-group-item"id="ansB">
+              <h4 class="list-group-item-heading">B:</h4>
+              <p class="list-group-item-text" >loading</p>
+            </a>
+            <a href="#" class="list-group-item"id="ansC">
+              <h4 class="list-group-item-heading">C:</h4>
+              <p class="list-group-item-text" >loading</p> 
+            </a>
+         </div>
+         <div id="accessories">
+          <h4>
+          <span class="label label-danger" id="timer">00:00</span>
+          <span class="label label-warning" id="stats">0/0 @ 0%</span>
+          <span id="answerRecord"></span>
+          </h4>
+         </div>
+
+
+
+
+      </div>
+
+    </div><!-- /.container -->
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Idea By Antony Ho, Code by John Ching | Information Classification : PROPRIETARY </p><p class="text-muted">©2016 CLP Power Hong Kong Limited.中華電力有限公司 All Rights Reserved</p>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- check if mobile and prompt install -->
+    <script src="js/webappInstall.js"></script>
+
+    <!-- load up the timer library -->
+
+    <script src="js/timer.jquery.js"></script>
+
+
+
+
+    <!-- questionbank is loaded here -->
+    <script type="text/javascript" language="javascript" src="js/data.json"></script> 
+    <script type='application/javascript' src='js/fastclick.js'></script>
+
+    <script src="js/logic.js"></script>
+  
+<!-- Modal for searching question number -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>Load a question by number or by keyword</h4>
+      </div>
+      <div class="modal-body"><div class="input-group">
+
+  <span class="input-group-addon" id="basic-addon1">QA</span>
+      <input type="number" pattern="[0-9]*" inputmode="numeric" min="1" max="1538" class="form-control" placeholder="123" id="numberSearchBox">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button" id="numberSearchButton"><span class="glyphicon glyphicon-search" aria-hidden="true"></button>
+      </span>
+    </div><!-- /input-group -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal for settings -->
+<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Settings</h4>
+      </div>
+      <div class="modal-body">
+        <form id="settingsForm">
+          <label class="control-label">Category</label>
+          <select class="form-control" id="categoryOption" >
+            <option value="0" selected="selected">Ops (All)</option>
+            <option value="1">Office Based</option>
+          </select>
+
+          <hr class="settingsDivider">
+
+          <label class="control-label">Question Range</label>
+          <div class="input-group">
+          <select class="form-control" id="qLowerRangeSelect" >
+            <option value="1" selected="selected">1</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+            <option value="300">300</option>
+            <option value="400">400</option>
+            <option value="500">500</option>
+            <option value="600">600</option>
+            <option value="700">700</option>
+            <option value="800">800</option>
+            <option value="900">900</option>
+            <option value="1000">1000</option>
+            <option value="1100">1100</option>
+            <option value="1200">1200</option>
+            <option value="1300">1300</option>
+            <option value="1400">1400</option>
+            <option value="1500">1500</option>
+          </select>
+          
+          <span class="input-group-addon" >to</span>
+
+          <select class="form-control" id="qUpperRangeSelect">
+            <option value="100">100</option>
+            <option value="200">200</option>
+            <option value="300">300</option>
+            <option value="400">400</option>
+            <option value="500">500</option>
+            <option value="600">600</option>
+            <option value="700">700</option>
+            <option value="800">800</option>
+            <option value="900">900</option>
+            <option value="1000">1000</option>
+            <option value="1100">1100</option>
+            <option value="1200">1200</option>
+            <option value="1300">1300</option>
+            <option value="1400">1400</option>
+            <option value="1500">1500</option>
+            <option value="1583" selected="selected">1583</option>
+          </select>
+          </div>
+          <div>
+          <label class="radio-inline"><input type="radio" name="random"  id="notRandomOption"><span class="glyphicon glyphicon-play" aria-hidden="true"></span> In Order</label>
+<label class="radio-inline"><input type="radio" checked="checked" name="random"  id="randomOption" value="1"><span class="glyphicon glyphicon-random" aria-hidden="true"></span> Random</label></div>
+
+          <hr class="settingsDivider">
+          <label class="control-label">Staff ID</label>
+
+          <input type="number" id="staffId" pattern="[0-9]*" inputmode="numeric" class="form-control" placeholder="15909" id="numberSearchBox">
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="saveSettingsBtn">Save changes</button>
+            </div>
+
+        </form>
+      </div><!-- close modal body-->
+    </div>
+  </div> 
+</div><!-- /close modal -->
+
+
+<!-- modal for stats (Highscores)-->
+<div class="modal fade" id="statsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">High Scores</h4>
+      </div>
+      <div class="modal-body">
+          <p>Highest streak of correct answers</p>
+          <h4>Personal Best</h4>
+          <table class="table">
+            <tr>
+              <th>Score</th>
+              <th>Date</th>
+            </tr>
+            <tr>
+              <td id="personalBest"></td>
+              <td id="dateforPersonBest"></td>
+            </tr>
+          </table>
+
+          <h4>Record</h4>
+          <table class="table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>ID</th>
+              <th>Streak</th>
+              <th>Stats</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody  id="recordsTableBody">
+            
+          </tbody>
+
+          </table>
+
+      </div><!-- close modal body-->
+    </div>
+  </div> 
+</div><!-- /close modal -->
+
+<!-- modal for changelog-->
+<div class="modal fade" id="logModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Version History</h4>
+      </div>
+      <div class="modal-body">
+          <table class="table">
+            <tr>
+              <th>Version</th>
+              <th>Date</th>
+              <th>Note</th>
+            </tr><tr><td>60b9654</td><td>Sun Apr 24 11:39:47 2016</td><td>added in-order mode</td></tr>
+ <tr><td>e694d55</td><td>Thu Apr 21 21:20:43 2016</td><td>updated code to patch Mentor glitch</td></tr>
+ <tr><td>b45be1e</td><td>Thu Apr 21 18:27:00 2016</td><td>enabled new question select</td></tr>
+ <tr><td>0c5650a</td><td>Thu Apr 21 18:23:16 2016</td><td>fixed bugs</td></tr>
+ <tr><td>2026df2</td><td>Thu Apr 21 08:48:42 2016</td><td>Unfixed mentor bug</td></tr>
+ <tr><td>eac71c1</td><td>Thu Apr 21 01:38:50 2016</td><td>added fast click</td></tr>
+ <tr><td>4664730</td><td>Thu Apr 21 01:19:35 2016</td><td>updated touch events</td></tr>
+ <tr><td>40f99c9</td><td>Thu Apr 21 00:48:07 2016</td><td>disable force install on testing</td></tr>
+ <tr><td>afeac5b</td><td>Thu Apr 21 00:42:52 2016</td><td>revert to logic</td></tr>
+ <tr><td>5fd5272</td><td>Thu Apr 21 00:36:46 2016</td><td>fix crash</td></tr>
+ <tr><td>0ea564d</td><td>Thu Apr 21 00:33:39 2016</td><td>temp disable online features</td></tr>
+ <tr><td>58ce6fb</td><td>Thu Apr 21 00:24:06 2016</td><td>added lookup function</td></tr>
+ <tr><td>7e5375b</td><td>Thu Apr 21 00:02:00 2016</td><td>added hidden hs code</td></tr>
+ <tr><td>8765a9a</td><td>Wed Apr 20 23:51:47 2016</td><td>loading test</td></tr>
+ <tr><td>b3af682</td><td>Wed Apr 20 22:42:21 2016</td><td>updated code so no duplicate questions will show</td></tr>
+ <tr><td>f25fae7</td><td>Tue Apr 19 15:58:44 2016</td><td>test updated database code</td></tr>
+ <tr><td>bae3293</td><td>Tue Apr 19 15:23:56 2016</td><td>added offline icons</td></tr>
+ <tr><td>9a42dfb</td><td>Tue Apr 19 15:14:51 2016</td><td>fixed double answer</td></tr>
+ <tr><td>3d1c961</td><td>Tue Apr 19 15:09:08 2016</td><td>try to fix true bug</td></tr>
+ <tr><td>4f7e97f</td><td>Tue Apr 19 15:06:13 2016</td><td>updated rounding</td></tr>
+ <tr><td>d469638</td><td>Tue Apr 19 15:01:29 2016</td><td>patched multi answerr glitch</td></tr>
+ <tr><td>b7d421f</td><td>Tue Apr 19 14:59:10 2016</td><td>re-fixed case bug</td></tr>
+ <tr><td>43480fb</td><td>Tue Apr 19 14:51:21 2016</td><td>fix lowercase bug</td></tr>
+ <tr><td>8910f8e</td><td>Tue Apr 19 13:57:06 2016</td><td>fixed date bug</td></tr>
+ <tr><td>d711bfe</td><td>Tue Apr 19 13:54:17 2016</td><td>added highscore stats page</td></tr>
+ <tr><td>f93a68d</td><td>Sat Apr 16 18:28:27 2016</td><td>pulled test branch to index</td></tr>
+ <tr><td>e341a25</td><td>Sat Apr 16 18:26:54 2016</td><td>implemented settings code</td></tr>
+ <tr><td>1bc1253</td><td>Sat Apr 16 13:57:23 2016</td><td>updated answer logic to prep for filter</td></tr>
+ <tr><td>07987da</td><td>Sat Apr 16 12:26:53 2016</td><td>fixed initial load bug</td></tr>
+ <tr><td>c91607e</td><td>Sat Apr 16 12:21:12 2016</td><td>added default settings</td></tr>
+ <tr><td>94f6759</td><td>Sat Apr 16 12:17:56 2016</td><td>implement setting save</td></tr>
+ <tr><td>89b03f0</td><td>Sat Apr 16 11:07:15 2016</td><td>test for inline options</td></tr>
+ <tr><td>18952d9</td><td>Sat Apr 16 00:52:03 2016</td><td>added logo to download page</td></tr>
+ <tr><td>38b4cc8</td><td>Fri Apr 15 18:16:56 2016</td><td>Fixed bug producing wrong answer for searched</td></tr>
+ <tr><td>874ca11</td><td>Thu Apr 14 17:08:35 2016</td><td>Re adjust size</td></tr>
+ <tr><td>57c1f17</td><td>Thu Apr 14 17:07:28 2016</td><td>Increased font size</td></tr>
+ <tr><td>3107f29</td><td>Mon Apr 11 23:55:09 2016</td><td>added iOS icons</td></tr>
+ <tr><td>597bbb5</td><td>Mon Apr 11 23:47:34 2016</td><td>updated icon</td></tr>
+ <tr><td>0e05570</td><td>Mon Apr 11 23:37:42 2016</td><td>added stats</td></tr>
+ <tr><td>bc9cf68</td><td>Mon Apr 11 23:24:52 2016</td><td>merged index with splashiest</td></tr>
+ <tr><td>62ddce0</td><td>Mon Apr 11 23:22:33 2016</td><td>updated mobile splash code</td></tr>
+ <tr><td>0af5441</td><td>Mon Apr 11 21:52:28 2016</td><td>splash code update</td></tr>
+ <tr><td>81c859a</td><td>Mon Apr 11 21:49:47 2016</td><td>split test page to avoid customer hours lost</td></tr>
+ <tr><td>b929ad6</td><td>Mon Apr 11 21:45:16 2016</td><td>debugging for install</td></tr>
+ <tr><td>d5845be</td><td>Mon Apr 11 21:42:24 2016</td><td>returned user control for iOS apps</td></tr>
+ <tr><td>9587a23</td><td>Mon Apr 11 21:37:13 2016</td><td>fixed overlap issue</td></tr>
+ <tr><td>d9ba3d9</td><td>Mon Apr 11 21:36:10 2016</td><td>added welcome text to install page</td></tr>
+ <tr><td>f1f5d64</td><td>Mon Apr 11 21:22:51 2016</td><td>test forceload</td></tr>
+ <tr><td>df5bacf</td><td>Mon Apr 11 21:14:50 2016</td><td>realigned everything on splash</td></tr>
+ <tr><td>b4271fa</td><td>Mon Apr 11 21:06:49 2016</td><td>try margin</td></tr>
+ <tr><td>f1a7045</td><td>Mon Apr 11 20:34:43 2016</td><td>updated splash page</td></tr>
+ <tr><td>582ddb9</td><td>Mon Apr 11 20:22:10 2016</td><td>Added dummy splash page for android</td></tr>
+ <tr><td>985f099</td><td>Sun Apr 10 16:53:21 2016</td><td>increased timer font size</td></tr>
+ <tr><td>af0c616</td><td>Sun Apr 10 16:47:01 2016</td><td>switch timer library for deployment</td></tr>
+ <tr><td>8814776</td><td>Sun Apr 10 16:35:02 2016</td><td>added timer function</td></tr>
+ <tr><td>07522d7</td><td>Sun Apr 10 15:58:02 2016</td><td>modification to footer behaviour</td></tr>
+ <tr><td>b44e13b</td><td>Sun Apr 10 15:55:08 2016</td><td>fixed footer overlap bug</td></tr>
+ <tr><td>5d46145</td><td>Sun Apr 10 15:50:46 2016</td><td>fixed search menu bug</td></tr>
+ <tr><td>fbde583</td><td>Sun Apr 10 15:34:52 2016</td><td>added number search feature</td></tr>
+ <tr><td>5fcc4f9</td><td>Sun Apr 10 14:14:07 2016</td><td>added credit text</td></tr>
+ <tr><td>eee4669</td><td>Sun Apr 10 13:47:29 2016</td><td>modified footer height for mobile</td></tr>
+ <tr><td>b9c3847</td><td>Sun Apr 10 12:43:08 2016</td><td>added footer text</td></tr>
+ <tr><td>4213609</td><td>Sun Apr 10 00:12:58 2016</td><td>added subtitles</td></tr>
+ <tr><td>b4da968</td><td>Sun Apr 10 00:05:00 2016</td><td>disabled scaling</td></tr>
+ <tr><td>9c24631</td><td>Sat Apr 9 23:53:04 2016</td><td>made title bar black</td></tr>
+ <tr><td>80b8feb</td><td>Sat Apr 9 23:51:53 2016</td><td>added title</td></tr>
+ <tr><td>5bc9607</td><td>Sat Apr 9 23:47:31 2016</td><td>host locally on gh doc pages</td></tr>
+ <tr><td>22417d5</td><td>Sat Apr 9 23:40:53 2016</td><td>Initial Publish</td></tr>
+
+          </table>
+
+
+      </div><!-- close modal body-->
+    </div>
+  </div> 
+</div><!-- /close modal -->
+
+
+</body>
+</html>

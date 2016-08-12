@@ -1,0 +1,184 @@
+#bodyContainer{
+	margin-top: 60px;
+}
+
+body {
+  /* Margin bottom by footer height */
+  /*margin-bottom: 85px;*/
+}
+
+#installtext{
+  font-size: 90%;
+}
+
+.footer {
+  /*position: absolute;*/
+  /*bottom: 0;*/
+  width: 100%;
+  margin-top: 15px;
+  /* Set the fixed height of the footer here */
+  /*height: 85px;*/
+  background-color: #f5f5f5;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 5px;
+}
+
+.jumbotron{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#arrow{
+  width: 30px;
+  height: 30px;
+}
+
+#share{
+
+  width: 20px;
+  height: 30px;
+}
+#add{
+
+  width: 30px;
+  height: 30px;
+}
+
+#splashFooter{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 80px;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.splashContainer{
+  /*padding-left: 10px;*/
+  /*padding-right: 10px;*/
+}
+
+#splashHeader>table{
+
+  margin-left:auto; 
+  margin-right:0;
+}
+
+.splashJumbo{
+  margin-top: 5%;
+}
+
+.list-group-item-text{
+  font-size: 120%;
+}
+
+
+.settingsDivider{
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.navbar-alison {
+  background-color: #d5e8d8;
+  border-color: #66b472;
+}
+.navbar-alison .navbar-brand {
+  color: #727272;
+}
+.navbar-alison .navbar-brand:hover,
+.navbar-alison .navbar-brand:focus {
+  color: #000000;
+}
+.navbar-alison .navbar-text {
+  color: #727272;
+}
+.navbar-alison .navbar-nav > li > a {
+  color: #727272;
+}
+.navbar-alison .navbar-nav > li > a:hover,
+.navbar-alison .navbar-nav > li > a:focus {
+  color: #000000;
+}
+.navbar-alison .navbar-nav > li > .dropdown-menu {
+  background-color: #d5e8d8;
+}
+.navbar-alison .navbar-nav > li > .dropdown-menu > li > a {
+  color: #727272;
+}
+.navbar-alison .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-alison .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #000000;
+  background-color: #66b472;
+}
+.navbar-alison .navbar-nav > li > .dropdown-menu > li > .divider {
+  background-color: #66b472;
+}
+.navbar-alison .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-alison .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-alison .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #000000;
+  background-color: #66b472;
+}
+.navbar-alison .navbar-nav > .active > a,
+.navbar-alison .navbar-nav > .active > a:hover,
+.navbar-alison .navbar-nav > .active > a:focus {
+  color: #000000;
+  background-color: #66b472;
+}
+.navbar-alison .navbar-nav > .open > a,
+.navbar-alison .navbar-nav > .open > a:hover,
+.navbar-alison .navbar-nav > .open > a:focus {
+  color: #000000;
+  background-color: #66b472;
+}
+.navbar-alison .navbar-toggle {
+  border-color: #66b472;
+}
+.navbar-alison .navbar-toggle:hover,
+.navbar-alison .navbar-toggle:focus {
+  background-color: #66b472;
+}
+.navbar-alison .navbar-toggle .icon-bar {
+  background-color: #727272;
+}
+.navbar-alison .navbar-collapse,
+.navbar-alison .navbar-form {
+  border-color: #727272;
+}
+.navbar-alison .navbar-link {
+  color: #727272;
+}
+.navbar-alison .navbar-link:hover {
+  color: #000000;
+}
+
+@media (max-width: 767px) {
+  .navbar-alison .navbar-nav .open .dropdown-menu > li > a {
+    color: #727272;
+  }
+  .navbar-alison .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-alison .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #000000;
+  }
+  .navbar-alison .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-alison .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-alison .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #000000;
+    background-color: #66b472;
+  }
+}
